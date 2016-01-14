@@ -1,0 +1,19 @@
+{
+  "name": "grails-es6-mocha-demo",
+  "version": "0.1.0",
+  "description": "An example Grails project with Babel and Mocha",
+  "scripts": {
+    "test": "NODE_PATH=grails-app/assets/javascripts mocha --compilers es6:babel-register \"src/test/javascript/**/*.es6\""
+  },
+  "keywords": [
+    "grails"
+  ],
+  "author": "Kevan Ahlquist",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "6.3.13",
+    "babel-register": "6.4.3",
+    "expect": "1.13.4",
+    "mocha": "2.3.4"
+  }
+}

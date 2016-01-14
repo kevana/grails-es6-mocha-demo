@@ -4,6 +4,7 @@ Thumbs.db
 build/
 classes/
 .idea
+node_modules
 *.iml
 *.ipr
 *.iws

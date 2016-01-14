@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
-        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.5.0'
+        classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.6.9'
         classpath "org.grails.plugins:hibernate:4.3.10.5"
     }
 }
@@ -36,11 +36,25 @@ ext {
 assets {
     minifyJs = true
     minifyCss = true
+    configOptions = [
+            babel: [
+                    enabled: true,
+                    processJsFiles: false,
+                    options: [
+                            blacklist: ['useStrict'],
+                            loose: 'all',
+                            modules: 'amd',
+                            moduleIds: true
+                    ]
+            ]
+    ]
 }
 
 repositories {
     mavenLocal()
     maven { url "https://repo.grails.org/grails/core" }
+    maven { url "http://dl.bintray.com/errbuddy/plugins" }
+
 }
 
 dependencyManagement {
@@ -62,6 +76,8 @@ dependencies {
     compile "org.grails.plugins:cache"
     compile "org.hibernate:hibernate-ehcache"
     compile "org.grails.plugins:scaffolding"
+
+    compile 'net.errbuddy.plugins:babel-asset-pipeline:1.4.3'
 
     runtime "org.grails.plugins:asset-pipeline"
 
