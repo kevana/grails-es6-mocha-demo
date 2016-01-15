@@ -65,6 +65,14 @@ grails:
                 scriptlets: html
                 taglib: none
                 staticparts: none
+    assets:
+        mapping: foo-assets
+        babel:
+            enabled: true
+            options:
+                modules: amd
+                moduleIds: true
+            processJsFiles: false
 ---
 hibernate:
     cache:

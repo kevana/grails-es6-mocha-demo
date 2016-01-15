@@ -9,6 +9,7 @@ buildscript {
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.6.9'
+        classpath "net.errbuddy.plugins:babel-asset-pipeline:1.4.3"
         classpath "org.grails.plugins:hibernate:4.3.10.5"
     }
 }
@@ -39,7 +40,7 @@ assets {
     configOptions = [
             babel: [
                     enabled: true,
-                    processJsFiles: false,
+                    processJsFiles: true,
                     options: [
                             blacklist: ['useStrict'],
                             loose: 'all',
