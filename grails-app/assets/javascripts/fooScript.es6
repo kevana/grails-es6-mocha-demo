@@ -1,4 +1,2 @@
 
-export default {
-    foo: 'bar'
-}
+export { createDevTools } from 'redux-devtools'

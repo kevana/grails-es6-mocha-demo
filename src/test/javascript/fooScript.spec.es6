@@ -1,9 +1,9 @@
 import expect from 'expect'
 
-import fooScript from 'fooScript'
+import { createDevTools } from 'fooScript'
 
 describe('fooScript spec', () => {
-    it('foo should be bar', () => {
-        expect(fooScript.foo).toEqual('bar')
+    it('createDevTools should be a function', () => {
+        expect(createDevTools).toBeA('function')
     })
 });

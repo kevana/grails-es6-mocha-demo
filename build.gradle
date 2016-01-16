@@ -16,6 +16,7 @@ buildscript {
 
 plugins {
     id "io.spring.dependency-management" version "0.5.4.RELEASE"
+    id "com.moowork.node" version "0.11"
 }
 
 version "0.1"
@@ -93,4 +94,15 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = gradleWrapperVersion
+}
+
+// Create the `npm test` command and run it when the project's test task is run.
+task npmTest(type: NpmTask, dependsOn: npmInstall) {
+    args = ['test']
+}
+test.dependsOn = [npmTest]
+
+node {
+    version = '4.0.0'
+    workDir = file("${project.buildDir}/nodejs")
 }
