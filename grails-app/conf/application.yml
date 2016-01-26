@@ -68,6 +68,9 @@ grails:
     assets:
         mapping: foo-assets
         babel:
+            processor: node
+            nodePath: '/usr/local/bin/node'
+            browserifyPath: 'node_modules/browserify/bin/cmd.js'
             enabled: true
             options:
                 modules: amd
