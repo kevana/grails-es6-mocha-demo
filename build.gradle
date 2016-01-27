@@ -44,7 +44,7 @@ assets {
 					nodePath: '/usr/local/bin/node',
 					browserifyPath: 'node_modules/browserify/bin/cmd.js',
                     enabled: true,
-                    processJsFiles: true,
+                    processJsFiles: false,
                     options: [
                             blacklist: ['useStrict'],
                             loose: 'all',
